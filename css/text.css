@@ -1,0 +1,47 @@
+.about-section {
+    padding: 100px 5%;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.reveal-text {
+    animation-delay: 0.4s; /* Textul începe să apară când imaginea este deja vizibilă pe jumătate */
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+}
+
+.accent-line {
+    width: 60px;
+    height: 4px;
+    background-color: #ff1493; /* Rozul tău de accent */
+    margin: 0 auto 30px;
+    border-radius: 2px;
+}
+
+.description {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #4a4a4a;
+}
+
+/* --- Stiluri pentru animația la scroll --- */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
