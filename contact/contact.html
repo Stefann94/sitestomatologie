@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | DentalCare</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/topbar.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="contact.css"> 
+</head>
+<body>
+
+<header>
+    <div class="top-bar">
+        <div class="marquee-container">
+            <div class="marquee-content">
+                <div class="marquee-group">
+                    <div class="info-item">
+                        <img src="../pictures/location.png" alt="Locație" class="topbar-icon">
+                        <span>Str. Exemplului Nr. 10, București</span>
+                    </div>
+                    <div class="info-item">
+                        <img src="../pictures/calendar.png" alt="Program" class="topbar-icon">
+                        <span>L-V: 09:00 - 20:00</span>
+                    </div>
+                    <div class="info-item">
+                        <img src="../pictures/phone.png" alt="Telefon" class="topbar-icon">
+                        <a class="phone-link" href="tel:+40700000000">+40 700 000 000</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="../index.html" style="text-decoration:none; color:inherit;">
+                <span class="plus">+</span> DentalCare
+            </a>
+        </div>
+        
+        <ul class="nav-links" id="navLinks">
+            <li><a href="../index.html">Acasă</a></li>
+            <li><a href="../index.html#servicii">Servicii</a></li>
+            <li><a href="../echipa/echipa.html">Echipa</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+
+        <div class="cta-container">
+            <a href="tel:+40700000000" class="btn">Programare</a>
+        </div>
+
+        <div class="burger" id="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <section class="contact-hero">
+        <div class="container">
+            <h1>Suntem aici pentru <span class="highlight">tine</span></h1>
+            <p>Programează o consultație sau trimite-ne întrebările tale. Echipa DentalCare îți stă la dispoziție.</p>
+        </div>
+    </section>
+
+    <section class="contact-main">
+        <div class="container contact-grid">
+            
+            <div class="contact-sidebar">
+                <div class="info-box">
+                    <span class="icon">📍</span>
+                    <div>
+                        <h4>Adresă</h4>
+                        <p>Str. Exemplului Nr. 10, București</p>
+                    </div>
+                </div>
+                <div class="info-box">
+                    <span class="icon">📞</span>
+                    <div>
+                        <h4>Telefon</h4>
+                        <p><a href="tel:+40700000000">+40 700 000 000</a></p>
+                    </div>
+                </div>
+                <div class="info-box">
+                    <span class="icon">📧</span>
+                    <div>
+                        <h4>Email</h4>
+                        <p>office@dentalcare.ro</p>
+                    </div>
+                </div>
+                <div class="info-box">
+                    <span class="icon">🕒</span>
+                    <div>
+                        <h4>Program</h4>
+                        <p>L-V: 09:00 - 20:00</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form-wrapper">
+                <form id="contact-form">
+                    <div class="input-group">
+                        <input type="text" placeholder="Numele tău" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                    <div class="input-group">
+                        <textarea placeholder="Mesajul tău..." rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-submit">Trimite Mesajul</button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="map-section">
+        <div class="container">
+            <div class="map-frame">
+                <p style="text-align:center; padding: 50px; color: #999;">Harta Google Maps</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<script type="module" src="../js/main.js"></script>
+</body>
+</html>
