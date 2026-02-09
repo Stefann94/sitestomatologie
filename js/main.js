@@ -36,13 +36,22 @@ document.querySelectorAll('.accordion-header').forEach(button => {
     button.addEventListener('click', () => {
         const accordion = button.parentElement;
         accordion.classList.toggle('active');
-        
-        // Închide celelalte dacă vrei (opțional)
-        /*
-        document.querySelectorAll('.faq-accordion').forEach(other => {
-            if (other !== accordion) other.classList.remove('active');
-        });
-        */
     });
 });
 
+const backToTopButton = document.getElementById("backToTop");
+
+window.addEventListener("scroll", () => {
+    if (window.pageYOffset > 300) {
+        backToTopButton.classList.add("show");
+    } else {
+        backToTopButton.classList.remove("show");
+    }
+});
+
+backToTopButton.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth" 
+    });
+});
