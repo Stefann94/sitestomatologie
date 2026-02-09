@@ -255,3 +255,69 @@
         width: 16rem;
     }
 }
+
+.stats-section {
+    background-color: #1a2a3a; /* Un albastru foarte închis, profesional */
+    padding: clamp(4rem, 8vh, 6rem) 0;
+    margin-top: clamp(2rem, 5vh, 4rem);
+    color: white;
+}
+
+.stats-container {
+    width: min(90%, 1100px);
+    margin: 0 auto;
+    display: grid;
+    /* Grid flexibil: se adaptează automat de la 1 la 4 coloane */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: clamp(2rem, 4vw, 4rem);
+    text-align: center;
+}
+
+.stat-item {
+    padding: 1rem;
+    position: relative;
+}
+
+/* Linie decorativă între elemente pe desktop */
+.stat-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: -2rem;
+    top: 25%;
+    height: 50%;
+    width: 1px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.stat-number {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    color: #ff0062; /* Rozul tău de brand */
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.stat-desc {
+    font-size: clamp(0.9rem, 1.1vw, 1.1rem);
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+}
+
+/* Responsivitate pentru ecrane mici */
+@media (max-width: 900px) {
+    .stat-item:not(:last-child)::after {
+        display: none; /* Scoatem liniile separatoare pe mobil */
+    }
+    
+    .stats-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 pe rând pe tabletă */
+    }
+}
+
+@media (max-width: 500px) {
+    .stats-container {
+        grid-template-columns: 1fr; /* 1 singur pe rând pe telefon */
+    }
+}
