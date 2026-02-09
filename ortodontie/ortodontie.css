@@ -1,0 +1,256 @@
+/* Hero Section - Adaptabil pe orice înălțime de ecran */
+.service-hero {
+    padding: clamp(4rem, 12vh, 10rem) 5% clamp(2rem, 5vh, 4rem);
+    text-align: center;
+    background: radial-gradient(circle at bottom left, #f5faff 0%, #ffffff 50%);
+}
+
+.hero-subtitle {
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    font-size: clamp(0.7rem, 1.5vw, 0.85rem);
+    font-weight: 600;
+    color: #ff0062;
+    margin-bottom: 1rem;
+}
+
+.service-hero h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    color: #1a2a3a;
+    line-height: 1.1;
+    max-width: 25ch; /* Limitează lățimea pentru lizibilitate */
+    margin: 0 auto;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #ff0062, #ff4d94);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.accent-line {
+    width: clamp(3rem, 10%, 4rem);
+    height: 0.25rem;
+    background: #ff0062;
+    margin: 1.5rem auto;
+    border-radius: 1rem;
+}
+
+.description {
+    max-width: 45rem;
+    margin: 0 auto;
+    color: #5a6b7c;
+    line-height: 1.8;
+    font-size: clamp(0.95rem, 1.1vw, 1.1rem);
+}
+
+/* Grid Carduri - Folosește procente și unități elastice */
+.treatments-section {
+    padding: clamp(3rem, 8vh, 5rem) 5% clamp(5rem, 12vh, 8rem);
+}
+
+.treatments-grid {
+    display: grid;
+    /* Cardul nu va fi niciodată mai mic de 18rem, dar se va extinde să umple spațiul */
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    gap: clamp(1.5rem, 4vw, 3rem);
+    max-width: 70rem;
+    margin: 0 auto;
+}
+
+.treatment-card {
+    background: white;
+    padding: clamp(2rem, 5%, 3rem) clamp(1rem, 3%, 2rem);
+    border-radius: 2rem;
+    text-align: center;
+    box-shadow: 0 0.6rem 2rem rgba(0,0,0,0.03);
+    border: 0.06rem solid rgba(0,0,0,0.05);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Asigură înălțime egală în rând */
+}
+
+/* Efectul de Hover solicitat - Contur Roz și Transformare */
+.treatment-card:hover {
+    transform: translateY(-0.6rem);
+    border-color: rgba(255, 0, 98, 0.3);
+    box-shadow: 0 1.2rem 2.5rem rgba(0,0,0,0.08);
+}
+
+.card-image-circle {
+    /* Dimensiune fluidă bazată pe viewport, dar cu limite */
+    width: clamp(6rem, 15vw, 8rem);
+    height: clamp(6rem, 15vw, 8rem);
+    margin: 0 auto 2rem;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    overflow: hidden;
+    background: #f0f0f0;
+    
+    /* Pregătire pentru conturul roz */
+    border: 0.2rem solid transparent; 
+    transition: all 0.4s ease; 
+}
+
+/* Activarea conturului roz la hover pe card */
+.treatment-card:hover .card-image-circle {
+    border-color: #ff0062;
+    border-radius: 50%; /* Se transformă în cerc perfect */
+    transform: scale(1.05);
+    box-shadow: 0 0 1.5rem rgba(255, 0, 98, 0.2);
+}
+
+.card-image-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.treatment-card h3 {
+    margin-bottom: 1rem;
+    color: #1a2a3a;
+    font-size: clamp(1.2rem, 1.5vw, 1.5rem);
+}
+
+.treatment-card p {
+    font-size: clamp(0.85rem, 1vw, 0.95rem);
+    color: #5a6b7c;
+    margin-bottom: 2rem;
+    flex-grow: 1; /* Împinge prețul jos chiar dacă textul e scurt */
+}
+
+.price-tag {
+    color: #ff0062;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+    background: rgba(255, 0, 98, 0.05);
+    border-radius: 2rem;
+    display: inline-block;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+/* Responsivitate - Ajustări fine pentru ecrane foarte mici */
+@media (max-width: 48rem) {
+    .treatments-grid {
+        gap: 1.5rem;
+    }
+    
+    .treatment-card {
+        padding: 2rem 1.5rem;
+    }
+}
+
+/* Containerul Global - Cel care oprește conținutul să atingă marginile */
+.container {
+    width: min(90%, 75rem); /* Ocupă 90% din ecran, dar nu mai mult de 75rem (1200px) */
+    margin: 0 auto; /* Centrează tot conținutul pe mijloc */
+}
+
+/* Secțiunea de Etape - Adăugăm spațiu generos sus și jos */
+.steps-section {
+    padding: clamp(5rem, 10vh, 10rem) 0;
+    background-color: #fcfcfc;
+}
+
+/* Titlul Secțiunii - Îl poziționăm elegant */
+.section-header {
+    text-align: center;
+    max-width: 40rem;
+    margin: 0 auto clamp(3rem, 8vh, 5rem); /* Spațiu mare sub titlu */
+}
+
+.section-title {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    color: #1a2a3a;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+/* Grid-ul de Etape - Rezolvăm problema marginilor */
+.steps-grid {
+    display: grid;
+    /* Grid-ul va avea coloane flexibile, dar se va opri la 3 pe rând */
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    gap: clamp(2rem, 5vw, 4rem);
+}
+
+.step-card {
+    position: relative;
+    padding: clamp(2rem, 5%, 3.5rem); /* Padding fluid în interiorul cardului */
+    background: #ffffff;
+    border-radius: 2rem;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.02);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.step-card:hover {
+    transform: translateY(-0.5rem);
+    box-shadow: 0 1.5rem 4rem rgba(255, 0, 98, 0.08);
+}
+
+/* Numărul etapei - Mai subtil și mai bine poziționat */
+.step-number {
+    font-size: clamp(3rem, 6vw, 4.5rem);
+    font-weight: 900;
+    color: rgba(255, 0, 98, 0.07);
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    line-height: 1;
+    pointer-events: none; /* Să nu încurce la selecția textului */
+}
+
+.step-card h3 {
+    font-size: 1.4rem;
+    color: #1a2a3a;
+    margin-bottom: 1rem;
+    position: relative; /* Ca să stea deasupra numărului */
+}
+
+.step-card p {
+    color: #5a6b7c;
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: clamp(2rem, 5vw, 5rem);
+    text-align: center;
+    padding: clamp(3rem, 8vh, 6rem) 0;
+}
+
+.benefit-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.benefit-item h4 {
+    margin-bottom: 0.8rem;
+    color: #1a2a3a;
+}
+
+.cta-box {
+    background: linear-gradient(135deg, #1a2a3a 0%, #2c3e50 100%);
+    border-radius: 2.5rem;
+    padding: clamp(3rem, 10%, 5rem);
+    text-align: center;
+    color: white;
+    margin: clamp(4rem, 12vh, 8rem) 0;
+}
+
+.cta-box h3 {
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    margin-bottom: 1rem;
+}
+
+.cta-box p {
+    opacity: 0.9;
+    margin-bottom: 2.5rem;
+}
