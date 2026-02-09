@@ -1,0 +1,160 @@
+/* Hero Section */
+.service-hero {
+    padding: clamp(5rem, 15vh, 10rem) 5% clamp(3rem, 8vh, 5rem);
+    text-align: center;
+    background: radial-gradient(circle at top right, #fff5f8 0%, #ffffff 50%);
+}
+
+.hero-subtitle {
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    font-size: clamp(0.7rem, 1vw, 0.9rem);
+    font-weight: 600;
+    color: #ff0062;
+    margin-bottom: 1rem;
+}
+
+.service-hero h1 {
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    color: #1a2a3a;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #ff0062, #ff4d94);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+}
+
+.accent-line {
+    width: clamp(3rem, 5vw, 5rem);
+    height: 0.25rem;
+    background: #ff0062;
+    margin: 1.5rem auto;
+    border-radius: 1rem;
+}
+
+.description {
+    max-width: 45rem;
+    margin: 0 auto;
+    font-size: clamp(1rem, 1.2vw, 1.15rem);
+    color: #5a6b7c;
+    line-height: 1.8;
+}
+
+
+.service-details {
+    padding: clamp(4rem, 10vh, 7rem) 5%;
+    background: #ffffff;
+}
+
+.details-grid {
+    display: flex;
+    align-items: flex-start; 
+    justify-content: center;
+    gap: clamp(2rem, 8vw, 6rem);
+    max-width: 75rem;
+    margin: 4rem auto; 
+}
+
+.details-text {
+    flex: 1.2;
+}
+
+.details-text h2 {
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    color: #1a2a3a;
+    margin-bottom: 1rem;
+}
+
+.accent-line-left {
+    width: 2.5rem;
+    height: 0.25rem;
+    background: #ff0062;
+    margin-bottom: 2rem;
+}
+
+.benefit-list {
+    list-style: none;
+    margin-top: 2.5rem;
+    padding: 0;
+}
+
+.benefit-list li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+    font-size: clamp(1rem, 1.1vw, 1.1rem);
+    color: #2c3e50;
+    font-weight: 400;
+}
+
+.bullet {
+    color: #ff0062;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+/* Rama Pozei - Forma organică modernă */
+.details-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.image-frame {
+    width: clamp(16rem, 28vw, 24rem);
+    aspect-ratio: 1 / 1;
+    background: transparent; 
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    overflow: hidden;
+    box-shadow: 0 1.5rem 3rem rgba(0,0,0,0.06);
+    transition: all 0.6s ease-in-out;
+    border: 1px solid rgba(0,0,0,0.03);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-frame:hover {
+    border-radius: 50%;
+    transform: scale(1.02);
+}
+
+.image-frame img {
+    
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+@media (max-width: 48rem) {
+    .details-grid {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .accent-line-left {
+        margin: 0 auto 2rem;
+    }
+
+    .benefit-list li {
+        justify-content: center;
+    }
+
+    .image-frame {
+        width: 85vw;
+        max-width: 20rem;
+        
+        background: transparent; 
+        border: none;
+    }
+}
