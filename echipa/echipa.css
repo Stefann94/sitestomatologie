@@ -305,27 +305,41 @@
     font-weight: 400;
 }
 
-/* Responsivitate pentru ecrane mici - Toate pe o linie */
 @media (max-width: 768px) {
-    .stat-item:not(:last-child)::after {
-        display: none; /* Scoatem liniile separatoare */
+    .stats-section {
+        padding: 2rem 0; /* Reducem padding-ul sus-jos pe mobil */
     }
-    
+
     .stats-container {
-        /* Forțăm elementele să stea pe un singur rând */
+        /* Folosim 95% din ecran pentru a câștiga spațiu */
+        width: 95%; 
         grid-template-columns: repeat(4, 1fr); 
-        gap: 10px; /* Reducem spațiul între ele ca să aibă loc */
-        padding: 0 10px;
+        gap: 5px; /* Spațiu minim între coloane */
+        padding: 0;
+        margin: 0 auto;
+        /* Ne asigurăm că nimic nu iese din container */
+        overflow: visible; 
+    }
+
+    .stat-item {
+        padding: 0.5rem 2px; /* Padding minim stânga-dreapta */
+    }
+
+    .stat-item:not(:last-child)::after {
+        display: none; 
     }
 
     .stat-number {
-        /* Micșorăm numerele pe telefon ca să nu se suprapună */
-        font-size: clamp(1.2rem, 4vw, 1.8rem); 
+        /* Scădem dimensiunea la un nivel sigur pentru telefoane înguste */
+        font-size: 1.1rem; 
+        margin-bottom: 2px;
     }
 
     .stat-desc {
-        /* Micșorăm descrierea pentru a economisi spațiu */
-        font-size: 0.7rem;
+        /* Text foarte mic și fără spațiere între litere */
+        font-size: 0.6rem;
         letter-spacing: 0;
+        line-height: 1.1;
+        display: block;
     }
 }
