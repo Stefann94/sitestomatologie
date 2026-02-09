@@ -146,3 +146,112 @@
         width: 90%;
     }
 }
+
+/* Secțiunea principală */
+.values-section {
+    padding: clamp(4rem, 10vh, 8rem) 0;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+/* Containerul care centrează textul și imaginile */
+.values-container {
+    width: min(90%, 1100px); /* Ocupă 90% din ecran, dar se oprește la 1100px */
+    margin: 0 auto;
+}
+
+.values-header {
+    text-align: center;
+    margin-bottom: clamp(3rem, 7vh, 5rem);
+}
+
+.highlight {
+    color: #ff0062; /* Roz pentru "definesc" */
+}
+
+/* Rândurile de conținut */
+.value-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(2rem, 6vw, 6rem);
+    margin-bottom: clamp(3rem, 8vh, 6rem);
+}
+
+.value-row.reverse {
+    flex-direction: row-reverse;
+}
+
+/* Imaginea și Rama */
+.value-visual {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.icon-circle {
+    width: clamp(14rem, 22vw, 20rem); /* Dimensiune fluidă */
+    aspect-ratio: 1 / 1;
+    background: #fbfbfb;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    overflow: hidden; /* Important: taie imaginea la marginile ramei */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+}
+
+.icon-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Imaginea umple rama fără să se deformeze */
+    transition: transform 0.5s ease;
+}
+
+/* Textul */
+.value-text {
+    flex: 1.2;
+    text-align: left;
+}
+
+.value-row.reverse .value-text {
+    text-align: right;
+}
+
+.value-number {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 600;
+    color: #ff0062; /* Culoare roz pentru numere */
+    display: block;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.value-text h3 {
+    font-size: clamp(1.2rem, 2vw, 1.8rem);
+    color: #1a2a3a;
+    margin-bottom: 1rem;
+}
+
+.value-text p {
+    font-size: clamp(0.95rem, 1.1vw, 1.1rem);
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Adaptare Mobil */
+@media (max-width: 768px) {
+    .value-row, .value-row.reverse {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .value-row.reverse .value-text {
+        text-align: center;
+    }
+
+    .icon-circle {
+        width: 16rem;
+    }
+}
