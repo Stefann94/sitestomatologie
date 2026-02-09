@@ -462,7 +462,7 @@
     }
 
     .deliver-image {
-        /* Forțăm înălțimea să se adapteze pozei, nu să fie 100% */
+        
         height: auto !important;
         flex: none !important;
     }

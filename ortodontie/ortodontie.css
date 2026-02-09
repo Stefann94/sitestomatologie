@@ -323,7 +323,7 @@
 .accordion-content {
     max-height: 0;
     overflow: hidden;
-    /* transition: 0.3s pentru un răspuns rapid, eliminând lag-ul perceput */
+    
     transition: max-height 0.3s ease-out;
     padding: 0 2rem;
 }
@@ -339,4 +339,4 @@
     font-size: 0.95rem;
     border-top: 1px solid rgba(0,0,0,0.03);
     padding-top: 1rem;
-}
+} 
