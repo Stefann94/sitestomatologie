@@ -303,16 +303,16 @@
 }
 
 /* Clasa care se va activa din JS */
-.faq-accordion.active .accordion-content {
+.faq-accordion.is-open .accordion-content {
     max-height: 200px;
     padding: 0 25px 25px 25px;
 }
 
-.faq-accordion.active .arrow-icon::before {
+.faq-accordion.is-open .arrow-icon::before {
     content: '-';
 }
 
-.faq-accordion.active {
+.faq-accordion.is-open {
     border-color: #ff1493;
     background: #fff;
 }

@@ -32,10 +32,26 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+// MODIFICĂ DOAR ACEASTĂ PARTE:
 document.querySelectorAll('.accordion-header').forEach(button => {
-    button.addEventListener('click', () => {
+    button.addEventListener('click', (e) => {
+        // Prevenim orice comportament default
+        e.preventDefault();
+        
         const accordion = button.parentElement;
-        accordion.classList.toggle('active');
+        
+        // Verificăm dacă e deja deschis
+        const isOpen = accordion.classList.contains('is-open');
+        
+        // OPȚIONAL: Închide celelalte întrebări când deschizi una nouă (pentru fluiditate)
+        document.querySelectorAll('.faq-accordion').forEach(item => {
+            item.classList.remove('is-open');
+        });
+
+        // Dacă nu era deschis, îl deschidem
+        if (!isOpen) {
+            accordion.classList.add('is-open');
+        }
     });
 });
 
@@ -70,3 +86,4 @@ if (slider) {
         sliderBtn.style.left = value + "%";
     });
 }
+
