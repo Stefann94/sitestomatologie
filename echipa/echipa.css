@@ -305,19 +305,27 @@
     font-weight: 400;
 }
 
-/* Responsivitate pentru ecrane mici */
-@media (max-width: 900px) {
+/* Responsivitate pentru ecrane mici - Toate pe o linie */
+@media (max-width: 768px) {
     .stat-item:not(:last-child)::after {
-        display: none; /* Scoatem liniile separatoare pe mobil */
+        display: none; /* Scoatem liniile separatoare */
     }
     
     .stats-container {
-        grid-template-columns: repeat(2, 1fr); /* 2 pe rând pe tabletă */
+        /* Forțăm elementele să stea pe un singur rând */
+        grid-template-columns: repeat(4, 1fr); 
+        gap: 10px; /* Reducem spațiul între ele ca să aibă loc */
+        padding: 0 10px;
     }
-}
 
-@media (max-width: 500px) {
-    .stats-container {
-        grid-template-columns: 1fr; /* 1 singur pe rând pe telefon */
+    .stat-number {
+        /* Micșorăm numerele pe telefon ca să nu se suprapună */
+        font-size: clamp(1.2rem, 4vw, 1.8rem); 
+    }
+
+    .stat-desc {
+        /* Micșorăm descrierea pentru a economisi spațiu */
+        font-size: 0.7rem;
+        letter-spacing: 0;
     }
 }
