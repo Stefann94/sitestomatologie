@@ -488,3 +488,43 @@
         padding-top: 1rem !important;
     }
 }
+
+/* --- REPARARE HERO SECTION (ÎNCEPUT PAGINĂ) PE MOBIL --- */
+@media screen and (max-width: 900px) {
+    
+    .container-service {
+        flex-direction: column-reverse; /* Pune imaginea sub text sau invers, după preferință */
+        text-align: center;
+        margin: 2rem auto; /* Reduce spațiul imens de sus */
+        gap: 2rem;
+        padding: 0 7%;
+    }
+
+    .service-text h1 {
+        font-size: 2.2rem !important; /* Titlu mai mic să nu se rupă urât */
+        line-height: 1.2;
+    }
+
+    .service-text p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .service-hero-image {
+        width: 100%;
+        text-align: center;
+    }
+
+    .service-hero-image img {
+        max-width: 280px; /* Previne imaginea să fie minusculă sau prea gigantică */
+        margin: 0 auto;
+        border-radius: 1rem;
+    }
+
+    /* Ajustare buton Hero */
+    .service-text .btn {
+        display: inline-block;
+        width: 100%; /* Butonul ocupă toată lățimea pe mobil pentru click ușor */
+        max-width: 250px;
+    }
+}
