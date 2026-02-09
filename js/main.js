@@ -55,3 +55,18 @@ backToTopButton.addEventListener("click", () => {
         behavior: "smooth" 
     });
 });
+
+
+const slider = document.getElementById('comparisonSlider');
+const beforeImg = document.querySelector('.before-img');
+const sliderLine = document.querySelector('.slider-line');
+const sliderBtn = document.querySelector('.slider-button');
+
+if (slider) {
+    slider.addEventListener('input', (e) => {
+        let value = e.target.value;
+        beforeImg.style.width = value + "%";
+        sliderLine.style.left = value + "%";
+        sliderBtn.style.left = value + "%";
+    });
+}
