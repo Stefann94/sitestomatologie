@@ -4,27 +4,29 @@ document.addEventListener('DOMContentLoaded', () => {
     initNavbar();
 });
 
-// Funcția pentru animația la scroll
 function initScrollReveal() {
-    const observerOptions = {
-        threshold: 0.2 // Animația începe când 20% din secțiune e vizibilă
-    };
-
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
+            const ratio = entry.intersectionRatio;
+
+            // Când intră în viewport peste 20%
+            if (ratio > 0.2) {
+                entry.target.classList.add("active");
             }
-            else {
-                // Când elementul iese de pe ecran (scroll up sau scroll down departe)
-                entry.target.classList.remove('active');
+
+            // Când iese sub 0.02 (aproape complet)
+            if (ratio < 0.02) {
+                entry.target.classList.remove("active");
             }
         });
-    }, observerOptions);
+    }, {
+        threshold: [0, 0.02, 0.2, 1]
+    });
 
-    const revealElements = document.querySelectorAll('.scroll-reveal');
-    revealElements.forEach(el => observer.observe(el));
+    document.querySelectorAll(".scroll-reveal").forEach(el => observer.observe(el));
 }
+
+
 
 
 document.addEventListener('DOMContentLoaded', () => {

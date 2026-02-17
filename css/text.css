@@ -38,10 +38,14 @@
     opacity: 0;
     transform: translateY(50px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    backface-visibility: hidden;
+    pointer-events: none; /* Foarte important: ignoră mouse-ul până nu e activ */
+    will-change: opacity, transform; /* Ajută browserul să randeze fluid */
 }
 
 .scroll-reveal.active {
     opacity: 1;
     transform: translateY(0);
+    pointer-events: auto;
 }
 

@@ -122,20 +122,20 @@ html {
 
 .hero-slide-left {
     opacity: 0;
-    transform: translateX(-80px);
-    transition: opacity 1s ease-out, transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+    transform: translateX(-30px); /* Redus de la 80px */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 .hero-slide-right {
     opacity: 0;
-    transform: translateX(80px);
-    transition: opacity 1s ease-out, transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+    transform: translateX(30px); /* Redus de la 80px */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
     transition-delay: 0.15s;
 }
 
 .hero-slide-left.active, 
 .hero-slide-right.active {
-    opacity: 1;
+    opacity: 1; 
     transform: translateX(0);
 }
 
