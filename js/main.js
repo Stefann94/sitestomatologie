@@ -9,7 +9,7 @@ function initScrollReveal() {
         entries.forEach(entry => {
             const ratio = entry.intersectionRatio;
 
-            // Când intră în viewport peste 20%
+            // Când intră în viewport peste 20%%
             if (ratio > 0.2) {
                 entry.target.classList.add("active");
             }
